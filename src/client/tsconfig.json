@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outFile": "../../public/main.js",
+    "rootDir": ".",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "target": "ES2020",
+    "module": "system",
+
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "types": ["node"],
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "lib": ["es2020", "dom"],
+  },
+  "include": [
+    "main.ts"
+  ]
+}

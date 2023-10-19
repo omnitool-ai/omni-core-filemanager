@@ -1,0 +1,19 @@
+{
+  "name": "omni-core-filemanager",
+  "version": "0.9.0",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "build": "esbuild --bundle --minify ./main.ts --outdir=../../public/  --format=esm --analyze --color=true --target=es2020  --platform=browser"
+  },
+  "externals": [
+    "omni-sdk"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.18.19",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "alpinejs": "^3.12.3",
+    "flip-js": "^0.0.4"
+  }
+}
