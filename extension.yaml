@@ -2,7 +2,7 @@ title: File Manager
 version: 0.0.1
 description: A file browser / manager to allow users to manage their recipe results and files.
 author: Georg Zoeller
-origin: https://github.com/georgzoeller/omni-core-filemanager.git
+origin: https://github.com/omnitool-ai/omni-core-filemanager.git
 client:
   addToWorkbench: true
   hideBackButton: true
