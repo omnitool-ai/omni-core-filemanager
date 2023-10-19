@@ -8,16 +8,17 @@ const script = {
 
   exec: async function (ctx, payload) {
 
-    console.log("-----files", payload)
+
     let limit = payload.limit || 50
     let cursor = payload.cursor || undefined
     let expiryType = payload.expiryType
+    let tags = payload.tags
 
     let owner = {
       user: ctx.userId.toLowerCase(),
       includeUnowned: payload.includeUnowned ?? true
     }
-    let files =  ctx.app.cdn.kvStorage.getAny('file.',undefined,{limit,cursor, expiryType, owner}).map((file) => {
+    let files =  ctx.app.cdn.kvStorage.getAny('file.',undefined,{limit,cursor, expiryType, owner, tags}).map((file) => {
 
       if (file.value.fid)
       {

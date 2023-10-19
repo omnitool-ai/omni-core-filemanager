@@ -85,6 +85,13 @@ class OmniResourceWrapper
 
 }
 
+let initTags = params.tags
+if (params.jobId)
+{
+  initTags ??= []
+  initTags.push(`job.${params.jobId}`)
+}
+
 let windowListener
 let closeListener
 
@@ -100,6 +107,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
     totalPages: () => Math.ceil(this.images.length / this.imagesPerPage),
     multiSelectedObjects: [],
     cursor: null,
+    filterTags: initTags,
     showInfo: true,
     loading: false, // for anims
     scale: 1, // zoom
@@ -107,7 +115,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
     y: 0,
     focusedObject: focusedObject || null,
     hover: false,
-    expiryType: 'permanent',
+    expiryType: params.expiryType || 'permanent',
     async handleExpiryChange(event) {
       let selectedValue = event.target.value;
       this.expiryType = selectedValue;
@@ -344,18 +352,26 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
 
     },
 
-    async fetchObjects(opts?: { cursor?: string, limit?: number,  replace?: boolean,  expiryType?: 'any'|'permanent'|'temporary'}) {
+    async fetchObjects(opts?: { cursor?: string, limit?: number,  replace?: boolean,  expiryType?: 'any'|'permanent'|'temporary', tags?: string[]}) {
       if (this.viewerMode) {
         return Promise.resolve()
       }
-      const body: { limit: number, cursor?: string, expiryType?: 'permanent' | 'temporary' } = { limit: this.imagesPerPage }
-      if (opts?.cursor) {
-        body.cursor = opts?.cursor
+      opts ??= {}
+
+      opts.tags ??= (this.filterTags && this.filterTags.length > 0) ? this.filterTags : undefined
+
+      const body: { limit: number, cursor?: string, expiryType?: 'permanent' | 'temporary', tags?:string[] } = { limit: this.imagesPerPage }
+      if (opts.cursor) {
+        body.cursor = opts.cursor
       }
-      if(opts?.limit && typeof(opts.limit) === 'number' &&  opts.limit > 0) {
+      if (opts.tags)
+      {
+        body.tags = opts.tags
+      }
+      if(opts.limit && typeof(opts.limit) === 'number' &&  opts.limit > 0) {
         body.limit = Math.max(opts.limit,2)
       }
-      if(opts?.expiryType && opts.expiryType !== 'any')
+      if(opts.expiryType && opts.expiryType !== 'any')
       {
         body.expiryType = opts.expiryType
       }
@@ -364,7 +380,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
         body.expiryType = this.expiryType
       }
       const data = await sdk.runExtensionScript('files', body)
-      this.addItems(data.images, opts?.replace)
+      this.addItems(data.images, opts.replace)
     },
     selectObject(img) {
       if (img.onclick) {
