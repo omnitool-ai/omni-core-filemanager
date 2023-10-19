@@ -9,11 +9,11 @@
     "omni-sdk"
   ],
   "devDependencies": {
-    "esbuild": "^0.18.19",
-    "typescript": "^5.1.6"
+    "esbuild": "^0.19.5",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "alpinejs": "^3.12.3",
+    "alpinejs": "^3.13.2",
     "flip-js": "^0.0.4"
   }
 }
