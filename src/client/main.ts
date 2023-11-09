@@ -468,7 +468,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
             }
           }))
       }
-      else if( img?.mimeType?.startsWith('text/plain'))
+      else if( img?.mimeType?.startsWith('text/'))
       {
         this.viewerExtension = '/extensions/omni-core-viewers/monaco.html?q='+encodeURIComponent(JSON.stringify(
           {
