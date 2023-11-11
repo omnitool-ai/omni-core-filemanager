@@ -242,7 +242,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
       if (file?.mimeType?.startsWith('audio/') || file.mimeType == 'application/ogg') {
         return '/extensions/omni-core-filemanager/assets/audio.png'
       }
-      if (file?.mimeType?.startsWith('application/json') || file.mimeType == 'text/json') {
+      if (file?.mimeType?.startsW ith('application/json') || file.mimeType == 'text/json') {
         return '/extensions/omni-core-filemanager/assets/json.png'
       }
 
@@ -461,6 +461,16 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
       else if( img?.mimeType?.startsWith('text/markdown'))
       {
         this.viewerExtension = '/extensions/omni-core-viewers/markdown.html?q='+encodeURIComponent(JSON.stringify(
+          {
+            file: {
+              fid: img.fid,
+              mimeType: img.mimeType
+            }
+          }))
+      }
+      else if( img?.mimeType?.startsWith('text/html'))
+      {
+        this.viewerExtension = '/extensions/omni-core-viewers/html.html?q='+encodeURIComponent(JSON.stringify(
           {
             file: {
               fid: img.fid,
