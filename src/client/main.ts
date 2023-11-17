@@ -291,13 +291,13 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
 
       let images = objs.filter(img=>OmniResourceWrapper.isImage(img))
       images.map(img => {
-        sdk.runClientScript('add', ["omnitool.input_static_image", {img: img.furl, preview: [JSON.parse(JSON.stringify(img))]}] )
+        sdk.runClientScript('add', ["omnitool.input_static_image", {img: 'fid://' + img.fid, preview: [JSON.parse(JSON.stringify(img))]}] )
       })
 
       let documents = objs.filter(obj=>OmniResourceWrapper.isDocument(obj))
       documents.map(doc =>
       {
-        sdk.runClientScript('add', ["omnitool.input_static_document", {doc: doc.furl, preview: [JSON.parse(JSON.stringify(doc))]}] )
+        sdk.runClientScript('add', ["omnitool.input_static_document", {doc: 'fid://' + doc.fid, preview: [JSON.parse(JSON.stringify(doc))]}] )
       })
     },
 
