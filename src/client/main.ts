@@ -468,6 +468,16 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
             }
           }))
       }
+      else if( img?.mimeType?.startsWith('application/javascript'))
+      {
+        this.viewerExtension = '/extensions/omni-core-viewers/monaco.html?q='+encodeURIComponent(JSON.stringify(
+          {
+            file: {
+              fid: img.fid,
+              mimeType: img.mimeType
+            }
+          }))
+      }
       else if( img?.mimeType?.startsWith('text/html'))
       {
         this.viewerExtension = '/extensions/omni-core-viewers/html.html?q='+encodeURIComponent(JSON.stringify(

@@ -2,8 +2,8 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 6
-  cacheKey: 8
+  version: 8
+  cacheKey: 10
 
 "@esbuild/android-arm64@npm:0.19.5":
   version: 0.19.5
@@ -163,15 +163,15 @@ __metadata:
   version: 3.1.5
   resolution: "@vue/reactivity@npm:3.1.5"
   dependencies:
-    "@vue/shared": 3.1.5
-  checksum: b7dfcaa30aacd658502ce9373d4343d3607486796fbaae28d4ac4ab955cec766c8c6a34cb422965b21154b6319e467c54259cd6da2d9b2687501cd9e36f4197c
+    "@vue/shared": "npm:3.1.5"
+  checksum: 9afea00db14d9ff9285051ed13184b1aefee1bf2de0210016756f39d1cf91553f24fd1e7f3c488cf40fba5d4ed15a4cdea3293f049a6762855e9fd1af1f4e357
   languageName: node
   linkType: hard
 
 "@vue/shared@npm:3.1.5":
   version: 3.1.5
   resolution: "@vue/shared@npm:3.1.5"
-  checksum: a34b942e1aeed5d2b0fe887d0804061d2e799ef9a0d641aaae368c6fa9e2bf311e415f02883f26963bd35d90cac165433cfe74360f7ee88304fccaa144422d83
+  checksum: f0c589cf01e6d5a0a9ab1d32be5a3f1c48292adb77652b444e03e1309c077ebbb9cfc6c21c2ccc315842056cc1558e4e5ddd34254733e32d348b0653b6a479bd
   languageName: node
   linkType: hard
 
@@ -179,8 +179,8 @@ __metadata:
   version: 3.13.2
   resolution: "alpinejs@npm:3.13.2"
   dependencies:
-    "@vue/reactivity": ~3.1.1
-  checksum: 964d78cbee7f44b28ed2c4f632a88bd2c9ded1df5ee76dc700b14f65bd465ef93ed26ea375681bdc950ba85df1d03dbd7ee3bffc09552a1d19097afef2f1bc1e
+    "@vue/reactivity": "npm:~3.1.1"
+  checksum: e8b8c7eb15ca4a4878e5652eeb56ccd189c7df3baccd9eba45c80fa224d0f7445f86b9e79f128661e2976fdd1986b3a4a2886a5c10674e44ce2ac4681707a3ab
   languageName: node
   linkType: hard
 
@@ -188,28 +188,28 @@ __metadata:
   version: 0.19.5
   resolution: "esbuild@npm:0.19.5"
   dependencies:
-    "@esbuild/android-arm": 0.19.5
-    "@esbuild/android-arm64": 0.19.5
-    "@esbuild/android-x64": 0.19.5
-    "@esbuild/darwin-arm64": 0.19.5
-    "@esbuild/darwin-x64": 0.19.5
-    "@esbuild/freebsd-arm64": 0.19.5
-    "@esbuild/freebsd-x64": 0.19.5
-    "@esbuild/linux-arm": 0.19.5
-    "@esbuild/linux-arm64": 0.19.5
-    "@esbuild/linux-ia32": 0.19.5
-    "@esbuild/linux-loong64": 0.19.5
-    "@esbuild/linux-mips64el": 0.19.5
-    "@esbuild/linux-ppc64": 0.19.5
-    "@esbuild/linux-riscv64": 0.19.5
-    "@esbuild/linux-s390x": 0.19.5
-    "@esbuild/linux-x64": 0.19.5
-    "@esbuild/netbsd-x64": 0.19.5
-    "@esbuild/openbsd-x64": 0.19.5
-    "@esbuild/sunos-x64": 0.19.5
-    "@esbuild/win32-arm64": 0.19.5
-    "@esbuild/win32-ia32": 0.19.5
-    "@esbuild/win32-x64": 0.19.5
+    "@esbuild/android-arm": "npm:0.19.5"
+    "@esbuild/android-arm64": "npm:0.19.5"
+    "@esbuild/android-x64": "npm:0.19.5"
+    "@esbuild/darwin-arm64": "npm:0.19.5"
+    "@esbuild/darwin-x64": "npm:0.19.5"
+    "@esbuild/freebsd-arm64": "npm:0.19.5"
+    "@esbuild/freebsd-x64": "npm:0.19.5"
+    "@esbuild/linux-arm": "npm:0.19.5"
+    "@esbuild/linux-arm64": "npm:0.19.5"
+    "@esbuild/linux-ia32": "npm:0.19.5"
+    "@esbuild/linux-loong64": "npm:0.19.5"
+    "@esbuild/linux-mips64el": "npm:0.19.5"
+    "@esbuild/linux-ppc64": "npm:0.19.5"
+    "@esbuild/linux-riscv64": "npm:0.19.5"
+    "@esbuild/linux-s390x": "npm:0.19.5"
+    "@esbuild/linux-x64": "npm:0.19.5"
+    "@esbuild/netbsd-x64": "npm:0.19.5"
+    "@esbuild/openbsd-x64": "npm:0.19.5"
+    "@esbuild/sunos-x64": "npm:0.19.5"
+    "@esbuild/win32-arm64": "npm:0.19.5"
+    "@esbuild/win32-ia32": "npm:0.19.5"
+    "@esbuild/win32-x64": "npm:0.19.5"
   dependenciesMeta:
     "@esbuild/android-arm":
       optional: true
@@ -257,14 +257,14 @@ __metadata:
       optional: true
   bin:
     esbuild: bin/esbuild
-  checksum: 5a0227cf6ffffa3076714d88230af1dfdd2fc363d91bd712a81fb91230c315a395e2c9b7588eee62986aeebf4999804b9b1b59eeab8e2457184eb0056bfe20c8
+  checksum: f8ffe0cbab8a80ec63b6962b7d722da9e3dbe79a57d3cd998e107e35792068facd6f63e58ae19e919891456ed6cb73114a9777f0e7353ec8613b4fc75571d56d
   languageName: node
   linkType: hard
 
 "flip-js@npm:^0.0.4":
   version: 0.0.4
   resolution: "flip-js@npm:0.0.4"
-  checksum: ea6ed657796683b11484e878c477b768010f4457d5e22370d8d32d9d1b4e1833f98f3fd23f6d19ad93ade9397ef2f889353730944f7ba61a3fb00b305577b50c
+  checksum: b172263d5ac08190377191939813badc1deb0ab6fe5368728b08fad9cc8760bc2d8b5e98b1d5688f7c01bafcaa5c28ebe12c9a5b0e0da0a0ed39894c7e7df8f9
   languageName: node
   linkType: hard
 
@@ -272,10 +272,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "omni-core-filemanager@workspace:."
   dependencies:
-    alpinejs: ^3.13.2
-    esbuild: ^0.19.5
-    flip-js: ^0.0.4
-    typescript: ^5.2.2
+    alpinejs: "npm:^3.13.2"
+    esbuild: "npm:^0.19.5"
+    flip-js: "npm:^0.0.4"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -285,16 +285,16 @@ __metadata:
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 7912821dac4d962d315c36800fe387cdc0a6298dba7ec171b350b4a6e988b51d7b8f051317786db1094bd7431d526b648aba7da8236607febb26cf5b871d2d3c
+  checksum: d65e50eb849bd21ff8677e5b9447f9c6e74777e346afd67754934264dcbf4bd59e7d2473f6062d9a015d66bd573311166357e3eb07fea0b52859cf9bb2b58555
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.2.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
   version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=ad5954"
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 07106822b4305de3f22835cbba949a2b35451cad50888759b6818421290ff95d522b38ef7919e70fb381c5fe9c1c643d7dea22c8b31652a717ddbd57b7f4d554
+  checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
   languageName: node
   linkType: hard
