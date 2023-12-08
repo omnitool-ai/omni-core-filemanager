@@ -116,6 +116,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
     focusedObject: focusedObject || null,
     hover: false,
     expiryType: params.expiryType || 'permanent',
+    fileType: 'any',
     async handleExpiryChange(event) {
       let selectedValue = event.target.value;
       this.expiryType = selectedValue;
@@ -380,7 +381,10 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
         body.expiryType = this.expiryType
       }
       const data = await sdk.runExtensionScript('files', body)
-      this.addItems(data.images, opts.replace)
+      const filteredFiles = data.files.filter(f => f.fileType === this.fileType || this.fileType === 'any')
+      console.log('tags' , this.filterTags)
+      console.log('data', filteredFiles)
+      this.addItems(filteredFiles, opts.replace)
     },
     selectObject(img) {
       if (img.onclick) {

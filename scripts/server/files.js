@@ -37,10 +37,8 @@ const script = {
       return {...file.value, seq: file.seq, tags: file.tags.map((tag) => tag.replace('#tag.', '') ||[] ) }
     })
     );
-
-
     return {
-      images:files
+      files:files
     }
   }
 
