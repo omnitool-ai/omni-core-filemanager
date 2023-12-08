@@ -354,6 +354,7 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
     },
 
     async fetchObjects(opts?: { cursor?: string, limit?: number,  replace?: boolean,  expiryType?: 'any'|'permanent'|'temporary', tags?: string[]}) {
+      // Return immediately if in viewer mode
       if (this.viewerMode) {
         return Promise.resolve()
       }
@@ -380,11 +381,15 @@ const createGallery = function (imagesPerPage: number, imageApi: string) {
       {
         body.expiryType = this.expiryType
       }
-      const data = await sdk.runExtensionScript('files', body)
-      const filteredFiles = data.files.filter(f => f.fileType === this.fileType || this.fileType === 'any')
-      console.log('tags' , this.filterTags)
-      console.log('data', filteredFiles)
-      this.addItems(filteredFiles, opts.replace)
+
+      try {
+        const data = await sdk.runExtensionScript('files', body)
+        const filteredFiles = data.files.filter(f => f.fileType === this.fileType || this.fileType === 'any')
+        this.addItems(filteredFiles, opts.replace)
+      } catch (error) {
+        console.error('Error fetching objects', error)
+      }
+      
     },
     selectObject(img) {
       if (img.onclick) {
